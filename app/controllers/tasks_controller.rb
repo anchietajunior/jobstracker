@@ -2,7 +2,7 @@ class TasksController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @tasks = Task.where(deadline: Date.today).order(:importance)
+    @tasks = Task.where(user_id: current_user.id).where(deadline: Date.today).order(:importance)
     @task = Task.new
   end
 
