@@ -4,7 +4,7 @@
 <% elsif @task.deadline == Date.today %>
 	$('#myModal').modal('toggle');
 	$('.alerts').append('<div class="alert alert-success">Task sucessfully created.</div>');
-	$('.list-group').append('<a href="#" class="list-group-item"><%= @task.title %></a>');
+	$('.list-group').prepend('<a href="#" class="list-group-item"><strong><%= @task.title %></strong> | <%= @task.deadline.strftime("%d/%m/%Y") %> <span class="badge"><%= @task.importance %></span></a>');
 	$(".alert").delay(4000).slideUp(200, function() {
     $(this).alert('close');
 	});
