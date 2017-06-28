@@ -8,6 +8,7 @@
 	$(".alert").delay(4000).slideUp(200, function() {
     $(this).alert('close');
 	});
+	$('#no').remove();
 <% else %>
 	$('#myModal').modal('toggle');
 	$('.alerts').append('<div class="alert alert-success">Task sucessfully created.</div>');

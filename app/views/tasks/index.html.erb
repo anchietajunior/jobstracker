@@ -14,7 +14,7 @@
 
 <div class="alerts"></div>
 
-<div class="list-group text-center" style="margin-top: 40px;">
+<div class="list-group" style="margin-top: 40px;">
   <% if @tasks.size > 0 %>
     <% @tasks.each do |task| %>
       <a href="#" class="list-group-item">
@@ -22,7 +22,7 @@
       </a>
     <% end %>
   <% else %>
-      <h2>Não há tarefas pra hoje. :)</h2>
+      <h2 class="text-center" id="no">Não há tarefas pra hoje. :)</h2>
   <% end %>
 </div>
 <!-- Modal -->
