@@ -17,7 +17,9 @@
 <div class="list-group" style="margin-top: 40px;">
   <% if @tasks.size > 0 %>
     <% @tasks.each do |task| %>
-      <a href="#" class="list-group-item"><%= task.title %></a>
+      <a href="#" class="list-group-item">
+        <strong><%= task.title %></strong> | <%= task.deadline.strftime("%d/%m/%Y") %> <span class="badge"><%= task.importance %></span>
+      </a>
     <% end %>
   <% else %>
       <h2>Não há tarefas pra hoje. :)</h2>

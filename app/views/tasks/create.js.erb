@@ -1,10 +1,16 @@
 <% if @task.errors.any? %>
 	$('#error_explanation').append("<ul><% @donor.errors.full_messages.each do |message| %><li><%= message %></li><% end %></ul>");
 	alert("Ocorreu um erro!")
-<% else %>
+<% elsif @task.deadline == Date.today %>
 	$('#myModal').modal('toggle');
 	$('.alerts').append('<div class="alert alert-success">Task sucessfully created.</div>');
 	$('.list-group').append('<a href="#" class="list-group-item"><%= @task.title %></a>');
+	$(".alert").delay(4000).slideUp(200, function() {
+    $(this).alert('close');
+	});
+<% else %>
+	$('#myModal').modal('toggle');
+	$('.alerts').append('<div class="alert alert-success">Task sucessfully created.</div>');
 	$(".alert").delay(4000).slideUp(200, function() {
     $(this).alert('close');
 	});
